@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <img src="2.png" alt="Logo" class="logo">
+        <h1>Housing Management Dashboard</h1>
+    </header>
+
+    <!-- Input Form Section -->
+    <section id="input-form">
+        <h2>Insert Housing Data</h2>
+        <form id="housing-form">
+            <div class="form-group">
+                <label for="house-address">House Address:</label>
+                <input type="text" id="house-address" placeholder="Enter address" required>
+            </div>
+            <div class="form-group">
+                <label for="house-number">House Number:</label>
+                <input type="text" id="house-number" placeholder="Enter house number" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="Enter city" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" placeholder="Enter pincode" required>
+            </div>
+            <div class="form-group">
+                <label for="available-rooms">Available Rooms for Rent:</label>
+                <input type="number" id="available-rooms" placeholder="Enter number of rooms" required>
+            </div>
+            <div class="form-group">
+                <label for="house-type">Type of House:</label>
+                <select id="house-type">
+                    <option value="Flat">Flat</option>
+                    <option value="Row House">Row House</option>
+                    <option value="Independent House">Independent House</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mess-available">Mess Available:</label>
+                <select id="mess-available">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <button type="submit">Add House</button>
+        </form>
+    </section>
+
+    <!-- Display Data Section -->
+    <section id="housing-table">
+        <h2>Available Houses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>House Address</th>
+                    <th>House Number</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th>Available Rooms</th>
+                    <th>House Type</th>
+                    <th>Mess Available</th>
+                </tr>
+            </thead>
+            <tbody id="house-list">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

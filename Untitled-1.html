@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rental Dashboard</title>
+    <style>
+        /* Basic reset and styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+        }
+
+        /* Header navigation links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            background-color: #3e8e41;
+            border-radius: 4px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            position: fixed;
+            top: 65px; /* Below the header */
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content styling */
+        .content {
+            margin-top: 65px; /* Below the fixed header */
+            margin-left: 220px; /* Room for the sidebar */
+            padding: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100px;
+            }
+            .content {
+                margin-left: 120px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="width: 50px;">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#rent-schedule">Rent Schedule</a>
+            <a href="#history">History</a>
+            <a href="#registration">Registration</a>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Home Rental Dashboard</h1>
+        <p>Welcome to the home rental dashboard! Here you can manage your rental properties, view your rent schedule, and much more.</p>
+
+        <h2>Rent Schedule</h2>
+        <p>Details about upcoming and past rent payments will go here.</p>
+
+        <h2>History</h2>
+        <p>Your rental history and payment records will be available here.</p>
+
+        <h2>Registration</h2>
+        <p>You can register new properties or tenants using the registration feature.</p>
+    </div>
+
+</body>
+</html>

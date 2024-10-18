@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Map</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            display: none;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<h1>College Locations</h1>
+<div id="map"></div>
+<div id="info" class="info"></div>
+
+<script>
+    const locations = [
+        { name: "College One", lat: 40.7128, lng: -74.0060, info: "Located in New York." },
+        { name: "College Two", lat: 34.0522, lng: -118.2437, info: "Located in Los Angeles." },
+        { name: "College Three", lat: 41.8781, lng: -87.6298, info: "Located in Chicago." },
+        { name: "College Four", lat: 29.7604, lng: -95.3698, info: "Located in Houston." },
+        { name: "College Five", lat: 39.7392, lng: -104.9903, info: "Located in Denver." },
+        { name: "College Six", lat: 33.4484, lng: -112.0740, info: "Located in Phoenix." },
+        { name: "College Seven", lat: 37.7749, lng: -122.4194, info: "Located in San Francisco." },
+        { name: "College Eight", lat: 38.9072, lng: -77.0369, info: "Located in Washington, D.C." },
+        { name: "College Nine", lat: 47.6062, lng: -122.3321, info: "Located in Seattle." },
+        { name: "College Ten", lat: 25.7617, lng: -80.1918, info: "Located in Miami." },
+    ];
+
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: { lat: 37.0902, lng: -95.7129 },
+        });
+
+        const infoWindow = new google.maps.InfoWindow();
+
+        locations.forEach(location => {
+            const marker = new google.maps.Marker({
+                position: { lat: location.lat, lng: location.lng },
+                map: map,
+                title: location.name,
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.setContent(<h3>${location.name}</h3><p>${location.info}</p>);
+                infoWindow.open(map, marker);
+            });
+        });
+    }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+</body>
+</html>
